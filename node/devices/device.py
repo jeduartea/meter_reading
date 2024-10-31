@@ -68,7 +68,12 @@ class Device:
 
 # Prueba de conexión al ejecutar el script de forma individual
 if __name__ == "__main__":
-    from ../varibles import Varible
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
+    if parent_dir not in sys.path:
+        sys.path.insert(0, parent_dir)
+    from varibles import Varible
+    
     # Instancia del dispositivo con un archivo de configuración de prueba
     test_device = Device("../conf_files/eGEO_1.json")  # Cambia "config_file.json" por la ruta de tu archivo de configuración
 
