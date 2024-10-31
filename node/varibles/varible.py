@@ -21,7 +21,7 @@ class Varible:
         time.sleep(0.5)
 
 
-        while not ser.inWaiting():
+        while not serial_port.inWaiting():
             time.sleep(0.1)
             
         if serial_port.inWaiting():
