@@ -1,9 +1,14 @@
 #!/bin/bash
 
+echo "Iniciando script meter_reading.sh..."
+
 # Ruta del archivo de configuración
 CONFIG_FILE="meter_reading_running.txt"
+echo "Archivo de configuración: $CONFIG_FILE"
+
 # Ruta del archivo Python
 PYTHON_SCRIPT="main_meter_reading.py"
+echo "Archivo de script Python: $PYTHON_SCRIPT"
 
 # Función para verificar si el proceso está en ejecución
 is_process_running() {
@@ -13,6 +18,7 @@ is_process_running() {
 # Leer la primera línea del archivo de configuración
 if [[ -f "$CONFIG_FILE" ]]; then
     RUNNING_STATUS=$(head -n 1 "$CONFIG_FILE")
+    echo "RUNNING_STATUS: $RUNNING_STATUS"
 else
     echo "Archivo $CONFIG_FILE no encontrado."
     exit 1
@@ -36,3 +42,5 @@ else
         echo "No hay ningún proceso $PYTHON_SCRIPT en ejecución para detener."
     fi
 fi
+
+echo "Script meter_reading.sh terminado."
