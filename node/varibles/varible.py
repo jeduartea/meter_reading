@@ -14,7 +14,7 @@ class Varible:
     def get_last_vaule(self, chip) -> None:
 
         serial_port = serial.Serial(port="/dev/ttyS1", baudrate=230400, timeout=1)
-        msg = f'{{"chip" : "{chip}", "operation" : "{self.code}"}}'
+        msg = f'{{"chip" : "{chip}", "operation" : "{self.code}"}}'+"\r\n"
         print(f"Enviando mensaje: {msg}")
         serial_port.write(msg.encode())
         time.sleep(0.2)
