@@ -2,7 +2,7 @@
     "name": "eGEO_hogar_2",
     "status": "active",
     "description": "Device to measures in home - this is in a test home",
-    "chip":"2",
+    "chip": "2",
     "variables": [
         {
             "name": "temperature",
@@ -98,30 +98,6 @@
             "name": "reactive_power_total",
             "code": "getQPowerT",
             "measurement_unit": "VAR",
-            "reading_frequency": 0.0082
-        },
-        {
-            "name": "apparent_power_A",
-            "code": "getApparentPowerA",
-            "measurement_unit": "VA",
-            "reading_frequency": 0.0082
-        },
-        {
-            "name": "apparent_power_B",
-            "code": "getApparentPowerB",
-            "measurement_unit": "VA",
-            "reading_frequency": 0.0082
-        },
-        {
-            "name": "apparent_power_C",
-            "code": "getApparentPowerC",
-            "measurement_unit": "VA",
-            "reading_frequency": 0.0082
-        },
-        {
-            "name": "apparent_power_total",
-            "code": "getApparentPowerT",
-            "measurement_unit": "VA",
             "reading_frequency": 0.0082
         },
         {
