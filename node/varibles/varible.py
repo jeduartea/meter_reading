@@ -19,16 +19,16 @@ class Varible:
         serial_port.write(msg.encode())
         time.sleep(0.5)
 
-            # Intentar leer la respuesta varias veces
-            response = ""
-            for _ in range(5):
-                if serial_port.in_waiting > 0:
-                    response += serial_port.readline().decode().strip()
-                time.sleep(0.1)
-            
-            self.value = response if response else "N/A"
-            self.timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            serial_port.close()
+        # Intentar leer la respuesta varias veces
+        response = ""
+        for _ in range(5):
+            if serial_port.in_waiting > 0:
+                response += serial_port.readline().decode().strip()
+            time.sleep(0.1)
+        
+        self.value = response if response else "N/A"
+        self.timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        serial_port.close()
 
 # Prueba de conexión al ejecutar el script de forma individual
 if __name__ == "__main__":
