@@ -46,7 +46,7 @@ if "__main__" == __name__:
         running_status = check_running_status(status_file)
 
         while running_status:
-            Node.add_all_values_to_csv(n_rows=500, output_folder=output_folder)
+            node_home.add_all_values_to_csv(n_rows=500, output_folder=output_folder)
             sleep(60)
             running_status = check_running_status(status_file)  # Verifica nuevamente el archivo después de cada iteración
 
