@@ -22,19 +22,13 @@ class Varible:
 
 
         while not ser.inWaiting():
-                    time.sleep(0.1)
-                if ser.inWaiting():
-                    recibidoSerial = ser.readline()
-                    data = json.loads(recibidoSerial)
-                     response = data["value"]
-                    print("recibido:", response)
-        
-        # Intentar leer la respuesta varias veces
-        response = ""
-        for _ in range(5):
-            if serial_port.in_waiting > 0:
-                response += serial_port.readline().decode().strip()
             time.sleep(0.1)
+            
+        if ser.inWaiting():
+                recibidoSerial = ser.readline()
+                data = json.loads(recibidoSerial)
+                response = data["value"]
+                print("recibido:", response)
         
         self.value = response if response else "N/A"
         self.timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
