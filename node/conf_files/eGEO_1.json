@@ -1,0 +1,224 @@
+{
+    "name": "eGEO_hogar_1",
+    "status": "active",
+    "description": "Device to measures in home - this is in a test home",
+    "chip":"1",
+    "variables": [
+        {
+            "name": "temperature",
+            "code": "getTemp",
+            "measurement_unit": "C",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "frequency",
+            "code": "getFrequency",
+            "measurement_unit": "Hz",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "mean_phase_angle_A",
+            "code": "getPAngleA",
+            "measurement_unit": "°",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "mean_phase_angle_B",
+            "code": "getPAngleB",
+            "measurement_unit": "°",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "mean_phase_angle_C",
+            "code": "getPAngleC",
+            "measurement_unit": "°",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "voltage_phase_angle_A",
+            "code": "getUangleA",
+            "measurement_unit": "°",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "voltage_phase_angle_B",
+            "code": "getUangleB",
+            "measurement_unit": "°",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "voltage_phase_angle_C",
+            "code": "getUangleC",
+            "measurement_unit": "°",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "active_power_A",
+            "code": "getPowerA",
+            "measurement_unit": "W",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "active_power_B",
+            "code": "getPowerB",
+            "measurement_unit": "W",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "active_power_C",
+            "code": "getPowerC",
+            "measurement_unit": "W",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "active_power_total",
+            "code": "getPowerT",
+            "measurement_unit": "W",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "reactive_power_A",
+            "code": "getQPowerA",
+            "measurement_unit": "VAR",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "reactive_power_B",
+            "code": "getQPowerB",
+            "measurement_unit": "VAR",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "reactive_power_C",
+            "code": "getQPowerC",
+            "measurement_unit": "VAR",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "reactive_power_total",
+            "code": "getQPowerT",
+            "measurement_unit": "VAR",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "apparent_power_A",
+            "code": "getApparentPowerA",
+            "measurement_unit": "VA",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "apparent_power_B",
+            "code": "getApparentPowerB",
+            "measurement_unit": "VA",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "apparent_power_C",
+            "code": "getApparentPowerC",
+            "measurement_unit": "VA",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "apparent_power_total",
+            "code": "getApparentPowerT",
+            "measurement_unit": "VA",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "power_factor_A",
+            "code": "getPFA",
+            "measurement_unit": "",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "power_factor_B",
+            "code": "getPFB",
+            "measurement_unit": "",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "power_factor_C",
+            "code": "getPFC",
+            "measurement_unit": "",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "power_factor_total",
+            "code": "getPFT",
+            "measurement_unit": "",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "rms_voltage_A",
+            "code": "getVoltageA",
+            "measurement_unit": "V",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "rms_voltage_B",
+            "code": "getVoltageB",
+            "measurement_unit": "V",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "rms_voltage_C",
+            "code": "getVoltageC",
+            "measurement_unit": "V",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "rms_current_A",
+            "code": "getCurrentA",
+            "measurement_unit": "A",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "rms_current_B",
+            "code": "getCurrentB",
+            "measurement_unit": "A",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "rms_current_C",
+            "code": "getCurrentC",
+            "measurement_unit": "A",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "voltage_thd_n_A",
+            "code": "getTHDNUA",
+            "measurement_unit": "%",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "voltage_thd_n_B",
+            "code": "getTHDNUB",
+            "measurement_unit": "%",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "voltage_thd_n_C",
+            "code": "getTHDNUC",
+            "measurement_unit": "%",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "current_thd_n_A",
+            "code": "getTHDNIA",
+            "measurement_unit": "%",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "current_thd_n_B",
+            "code": "getTHDNIB",
+            "measurement_unit": "%",
+            "reading_frequency": 0.0082
+        },
+        {
+            "name": "current_thd_n_C",
+            "code": "getTHDNIC",
+            "measurement_unit": "%",
+            "reading_frequency": 0.0082
+        }
+    ]
+}
