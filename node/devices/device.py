@@ -63,3 +63,17 @@ class Device:
             })
         
         return result
+
+# Prueba de conexión al ejecutar el script de forma individual
+if __name__ == "__main__":
+    # Instancia del dispositivo con un archivo de configuración de prueba
+    test_device = Device("../conf_files/eGEO_1.json")  # Cambia "config_file.json" por la ruta de tu archivo de configuración
+
+    # Leer todas las variables
+    print(f"Leyendo todas las variables para el dispositivo '{test_device.name}'...")
+    test_device.read_all_varibles()
+
+    # Obtener y mostrar los valores de todas las variables
+    all_values = test_device.get_all_varibles_values()
+    print(f"Valores de todas las variables:\n{json.dumps(all_values, indent=4)}")
+    
