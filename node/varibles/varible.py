@@ -1,5 +1,6 @@
 import time
 import serial
+import json
 
 
 class Varible: 
@@ -16,9 +17,18 @@ class Varible:
         serial_port = serial.Serial(port="/dev/ttyS1", baudrate=230400, timeout=1)
         msg = f'{{"chip" : "{chip}", "operation" : "{self.code}"}}'+"\r\n"
         print(f"Enviando mensaje: {msg}")
-        serial_port.write(msg.encode())
+        serial_port.write(msg.encode('utf8'))
         time.sleep(0.5)
 
+
+        while not ser.inWaiting():
+                    time.sleep(0.1)
+                if ser.inWaiting():
+                    recibidoSerial = ser.readline()
+                    data = json.loads(recibidoSerial)
+                     response = data["value"]
+                    print("recibido:", response)
+        
         # Intentar leer la respuesta varias veces
         response = ""
         for _ in range(5):
