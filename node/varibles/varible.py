@@ -26,3 +26,16 @@ class Varible:
         self.timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) # add time to timestamp
     
         serial_port.close()
+
+# Prueba de conexión al ejecutar el script de forma individual
+if __name__ == "__main__":
+    # Crear una instancia de Varible para la fase A del voltaje
+    voltage_var = Varible(name="Voltage Phase A", code="getVoltageA", measurement_unit="V", reading_frequency=0.0082)
+    
+    # Ejecutar el método get_last_value para obtener el voltaje de la fase A en el chip 1
+    voltage_var.get_last_value(chip="1")
+    
+    # Mostrar el resultado de la prueba de conexión
+    print(f"Prueba de conexión para Chip 1 - Voltaje Fase A:")
+    print(f"Valor obtenido: {voltage_var.value} {voltage_var.measurement_unit}")
+    print(f"Timestamp de la lectura: {voltage_var.timestamp}")
