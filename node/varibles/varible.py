@@ -24,8 +24,8 @@ class Varible:
         while not ser.inWaiting():
             time.sleep(0.1)
             
-        if ser.inWaiting():
-                recibidoSerial = ser.readline()
+        if serial_port.inWaiting():
+                recibidoSerial = serial_port.readline()
                 data = json.loads(recibidoSerial)
                 response = data["value"]
                 print("recibido:", response)
