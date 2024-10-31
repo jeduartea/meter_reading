@@ -68,7 +68,7 @@ class Device:
 
 # Prueba de conexión al ejecutar el script de forma individual
 if __name__ == "__main__":
-    from varibles import Varible
+    from .varibles import Varible
     # Instancia del dispositivo con un archivo de configuración de prueba
     test_device = Device("../conf_files/eGEO_1.json")  # Cambia "config_file.json" por la ruta de tu archivo de configuración
 
