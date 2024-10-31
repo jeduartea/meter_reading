@@ -15,6 +15,7 @@ class Varible:
 
         serial_port = serial.Serial(port="/dev/ttyS1", baudrate=230400, timeout=0.1)
         msg = f'{{"chip":"{chip}", "operation":"{self.code}"}}'+"\n"
+        print(f"Enviando mensaje: {msg}")
         serial_port.write(msg.encode())
         time.sleep(0.2)
 
