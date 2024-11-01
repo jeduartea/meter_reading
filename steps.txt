@@ -1,12 +1,13 @@
-Git
+## configurar zona horaria ##
 
+onion time set America/Bogota COT5
+## configurar Git ##
 opkg update
 opkg install git
 
-git clone https://github.com/usuario/repositorio.git /ruta/destino
+git clone https://github.com/jeduartea/meter_reading/
 
-
-
+## configurar Cron##
 Asegúrate de que cron esté habilitado en la Onion Omega
 
 /etc/init.d/cron enable
@@ -16,27 +17,33 @@ crontab -e
 
 En el archivo crontab, agrega la siguiente línea:
 
+""""
+0 */6 * * * cd /root/UsbFolder/meter_reading && git pull >> /root/UsbFolder/meter_reading/git_pull.log 2>&1
+5 */6 * * * /root/UsbFolder/meter_reading/meter_reading.sh >> /root/UsbFolder/meter_reading/meter_reading.log 2>&1
+""""
 
-# Actualiza el repositorio cada 6 horas
-0 */6 * * * cd /ruta/al/repositorio && git pull
+La sintaxis de una línea de crontab es:
+""""
+<minuto> <hora> <día del mes> <mes> <día de la semana> <comando>
+""""
 
-# Ejecuta el script de verificación después de la actualización
-5 */6 * * * /ruta/al/script/check_meter_reading.sh
-
-Este comando se ejecutará a la hora 0 de cada 6 horas 
-(es decir, a las 0:00, 6:00, 12:00, y 18:00) todos los días.
-
-0 */6 * * *: especifica que el comando se ejecute cada 6 horas.
-/ruta/al/script/check_meter_reading.sh: reemplaza esta ruta 
-con la ruta completa al script .sh que configuraste.
-
-
-Después de añadir la línea, guarda y cierra el archivo (Ctrl + O y Ctrl + X en nano).
-
-
-Verifica que la tarea esté programada
 Para asegurarte de que el cron job esté activo,
- puedes listar las tareas cron configuradas con:
+puedes listar las tareas cron configuradas con:
 
 crontab -l
 
+## CORRER SCRITP ##
+
+redirigir la salida estandar 
+/root/UsbFolder/meter_reading/meter_reading.sh > /dev/null 2>&1 < /dev/null &
+
+# Utilizar el siguiente
+start-stop-daemon -b -S -x /bin/sh -- /root/UsbFolder/meter_reading/meter_reading.sh
+
+# verificar si estan corriendo los proceso #
+
+para python
+ps | grep main_meter_reading.py | grep -v grep
+
+para el script de bash
+ps | grep meter_reading.sh | grep -v grep
